@@ -1,8 +1,9 @@
-import './../polyfills';
-import {platformBrowser} from '@angular/platform-browser';
-import {enableProdMode} from '@angular/core';
+import "./../polyfills";
 
-import {AppModuleNgFactory} from './../../aot/src/app/app.module.ngfactory';
+import {enableProdMode} from "@angular/core";
+import {platformBrowser} from "@angular/platform-browser";
+
+import {AppModuleNgFactory} from "./../../aot/src/app/app.module.ngfactory";
 
 enableProdMode();
 

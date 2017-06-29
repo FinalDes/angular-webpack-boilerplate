@@ -7,9 +7,10 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint --config ./tslint.json ./src/**/*.ts",
     "build": "webpack-dev-server --inline --progress --port 8080 --config webpack.config.dev.js",
-    "aot": "ngc -p tsconfig.aot.json",
-    "build:prod": "del-cli dist && yarn aot && yarn aot && webpack --config webpack.config.prod.js --progress --profile --bail",
+    "compile": "ngc -p tsconfig.aot.json",
+    "build:prod": "del-cli dist && yarn compile && yarn compile && webpack --config webpack.config.prod.js --progress --profile --bail",
     "serve": "lite-server -c bs-config.js"
   },
   "devDependencies": {
@@ -22,6 +23,8 @@
     "html-webpack-plugin": "^2.29.0",
     "lite-server": "^2.3.0",
     "raw-loader": "^0.5.1",
+    "tslint": "^5.4.3",
+    "tslint-loader": "^3.5.3",
     "typescript": "~2.3.4",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.5.0",

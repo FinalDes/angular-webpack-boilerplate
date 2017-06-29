@@ -7,20 +7,31 @@ module.exports = {
     },
     module:{
         rules:[
-            {
-                test: /\.html$/,
-                loaders:['html-loader']
-            },
-            {
-                test: /\.css$/,
-                loader:['raw-loader']
+        {
+            enforce: 'pre',
+            test: /\.ts$/,
+            loader: 'tslint-loader',
+            exclude: /node_modules/,
+            options:{
+                emitErrors: false,
+                failOnHint: true,
+                tsConfigFile: 'tsconfig.json',
             }
+        },
+        {
+            test: /\.html$/,
+            loaders:['html-loader']
+        },
+        {
+            test: /\.css$/,
+            loader:['raw-loader']
+        }
         ],
         exprContextCritical: false
     },
     plugins:[
-        new HtmlWebpackPlugin({
-            template: 'src/index.html'
-        })
+    new HtmlWebpackPlugin({
+        template: 'src/index.html'
+    })
     ]
 }
