@@ -3,6 +3,7 @@ var path = require('path');
 var webPack = require('webpack');
 var webpackMerge = require('webpack-merge');
 var commonConfig = require('./webpack.config.common');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = webpackMerge(commonConfig,{
     entry:'./src/app/main.aot.ts',
@@ -28,6 +29,17 @@ module.exports = webpackMerge(commonConfig,{
         ]
     },
     plugins:[
-        new webPack.optimize.UglifyJsPlugin()
+        new webPack.optimize.UglifyJsPlugin(),
+        new HtmlWebpackPlugin({
+            template: 'src/index.html',
+            minify: {
+                html5: true,
+                collapseWhitespace: true,
+                collapseBooleanAttributes: true,
+                removeComments: true,
+                removeEmptyAttributes: true,
+                removeScriptTypeAttributes: true
+            }
+        })
     ]
 })
