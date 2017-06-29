@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "6"
+  - "4"
+script:
+  - yarn
+  - yarn lint
+  - yarn compile
+  - yarn build:prod
+cache:
+  yarn: true
+  directories:
+    - "node_modules"
