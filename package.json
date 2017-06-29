@@ -1,0 +1,8 @@
+{
+  "name": "angular-webpack-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:FinalDes/angular-webpack-boilerplate.git",
+  "author": "Alex Alonso <alex4551@gmail.com>",
+  "license": "MIT"
+}
