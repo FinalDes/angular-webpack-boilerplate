@@ -7,16 +7,22 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack-dev-server --inline --progress --port 8080 --config webpack.config.dev.js"
+    "build": "webpack-dev-server --inline --progress --port 8080 --config webpack.config.dev.js",
+    "aot": "ngc -p tsconfig.aot.json",
+    "build:prod": "del-cli dist && yarn aot && yarn aot && webpack --config webpack.config.prod.js --progress --profile --bail",
+    "serve": "lite-server -c bs-config.js"
   },
   "devDependencies": {
+    "@types/core-js": "0.9.36",
+    "@types/node": "^6.0.45",
     "angular2-template-loader": "^0.6.2",
     "awesome-typescript-loader": "^3.2.1",
     "del-cli": "^1.1.0",
     "html-loader": "^0.4.5",
     "html-webpack-plugin": "^2.29.0",
+    "lite-server": "^2.3.0",
     "raw-loader": "^0.5.1",
-    "typescript": "^2.4.1",
+    "typescript": "~2.3.4",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.5.0",
     "webpack-merge": "^4.1.0"
@@ -24,6 +30,7 @@
   "dependencies": {
     "@angular/common": "^4.2.4",
     "@angular/compiler": "^4.2.4",
+    "@angular/compiler-cli": "^4.2.4",
     "@angular/core": "^4.2.4",
     "@angular/platform-browser": "^4.2.4",
     "@angular/platform-browser-dynamic": "^4.2.4",
