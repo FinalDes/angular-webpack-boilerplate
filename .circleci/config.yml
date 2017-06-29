@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/build
+    docker:
+      - image: circleci/node:6.10.3
+    steps:
+      - checkout
+      - run:
+          name: install-yarn
+          command: sudo npm install -g yarn
+      - run:
+          name: install packages
+          command: yarn
+      - run:
+          name: run tslint
+          command: yarn lint
+      - run:
+          name: build package
+          command: yarn build
+      
