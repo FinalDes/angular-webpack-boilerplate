@@ -12,9 +12,9 @@ jobs:
       - run:
           name: install packages
           command: yarn
-    - run:
-          name: run eslint
-          command: yarn eslint
+      - run:
+          name: run eclint
+          command: yarn eclint
       - run:
           name: run tslint
           command: yarn tslint
