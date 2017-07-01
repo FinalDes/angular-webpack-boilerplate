@@ -5,7 +5,8 @@ node_js:
   - "4"
 script:
   - yarn
-  - yarn lint
+  - yarn eclint
+  - yarn tslint
   - yarn compile
   - yarn build:prod
 cache:

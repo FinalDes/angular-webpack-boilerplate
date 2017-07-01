@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "tslint --config ./tslint.json ./src/**/*.ts",
+    "eclint": "eclint check *",
+    "tslint": "tslint ./src/**/*.ts",
     "build": "webpack-dev-server --inline --progress --port 8080 --config webpack.config.dev.js",
     "compile": "ngc -p tsconfig.aot.json",
     "build:prod": "del-cli dist && yarn compile && yarn compile && webpack --config webpack.config.prod.js --progress --profile --bail",
