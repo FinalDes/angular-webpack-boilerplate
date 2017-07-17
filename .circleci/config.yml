@@ -13,9 +13,15 @@ jobs:
           name: install packages
           command: yarn
       - run:
-          name: run tslint
-          command: yarn lint
+          name: run eclint
+          command: yarn eclint
       - run:
-          name: build package
-          command: yarn build
+          name: run tslint
+          command: yarn tslint
+      - run:
+          name: compile project
+          command: yarn compile
+      - run:
+          name: build project
+          command: yarn build:prod
       

@@ -19,12 +19,6 @@ module.exports = {
             }
         },
         {
-            enforce: 'pre',
-            test: /\.html/,
-            loader: 'htmlhint-loader',
-            exclude: /node_modules/
-        },
-        {
             test: /\.html$/,
             loaders:['html-loader']
         },
